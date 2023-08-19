@@ -1,5 +1,8 @@
 {
   "devDependencies": {
-    "sass": "^1.65.1"
+    "sass": "^1.66.1"
+  },
+  "dependencies": {
+    "@material/chips": "^14.0.0"
   }
 }

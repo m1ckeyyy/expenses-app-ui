@@ -33,6 +33,8 @@
 		<aside>
 			<nav>
 				<ul class="nav">
+					
+					<!-- changes -->
 					<!-- <button class="mdc-button foo-button">
 						<div class="mdc-button__ripple"></div>
 						<span class="mdc-button__label">Button</span>
@@ -57,6 +59,7 @@
 							<div class="mdc-checkbox__ripple"></div>
 						</div>
 					</div> -->
+					
 					<li class="nav__logo"><a href="#">parleto.</a></li>
 					<li class="nav__item"><a href="#">DASHBOARD</a></li>
 					<li class="nav__item"><a href="#">REPORTS</a></li>
@@ -68,33 +71,82 @@
 			</nav>
 		</aside>
 
-		<section class="body">
+		<section class="expenses-container">
 			<section class="expenses_box">
 				<div class="expenses_box_header">
 					<h1>Expenses</h1>
 					<span class="material-symbols-outlined"> payments </span>
 				</div>
-				<form class="datepicker">
-					<label>
+				
+				<form class="expense-box-filters">
+					<div class='datepicker'>
 						<div class="form-title">
-							<span>Filters</span>
+							<span>Filter by date</span>
 							<span class="material-symbols-outlined icon-tune"> tune </span>
 						</div>
 
 						<span class="range">
-							<input type="date" /><span>-</span> <input type="date" /></span
-					></label>
-					<label
-						><span>Category</span>
-						<select>
-							<option value="food">food</option>
-							<option value="car">car</option>
-						</select>
-					</label>
-					<label class="search-bar">
+							<input type="date" /> <span> - </span> <input type="date" /></span
+					></div class='datepicker'>
+					<div class='choose-category'>
+						<span class='choose-category-header'>Categories: </span>
+
+						<div class='checkbox-wrap'>
+							<span>Food</span>
+							<div class="mdc-touch-target-wrapper">
+								<div class="mdc-checkbox mdc-checkbox--touch">
+									<input
+										type="checkbox"
+										class="mdc-checkbox__native-control"
+										id="checkbox-1"
+									/>
+									<div class="mdc-checkbox__background">
+										<svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+											<path
+												class="mdc-checkbox__checkmark-path"
+												fill="none"
+												d="M1.73,12.91 8.1,19.28 22.79,4.59"
+											/>
+										</svg>
+										<div class="mdc-checkbox__mixedmark"></div>
+									</div>
+									<div class="mdc-checkbox__ripple"></div>
+								</div>
+							</div>
+						</div>
+						
+						<div class='checkbox-wrap'>
+						<span>Car</span>
+						<div class="mdc-touch-target-wrapper">
+							<div class="mdc-checkbox mdc-checkbox--touch">
+								<input
+									type="checkbox"
+									class="mdc-checkbox__native-control"
+									id="checkbox-2"
+								/>
+								<div class="mdc-checkbox__background">
+									<svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+										<path
+											class="mdc-checkbox__checkmark-path"
+											fill="none"
+											d="M1.73,12.91 8.1,19.28 22.79,4.59"
+										/>
+									</svg>
+									<div class="mdc-checkbox__mixedmark"></div>
+								</div>
+								<div class="mdc-checkbox__ripple"></div>
+							</div>
+						</div>
+						
+					</div>
+					</div>
+					<div class="price-range">
+						<span class="material-symbols-outlined"> attach_money </span>
+<div>Price Range: </div>					</div>
+					<div class="search-bar">
 						<span class="material-symbols-outlined"> search </span>
 						<input type="text" placeholder="Search..." />
-					</label>
+					</div>
 				</form>
 
 				<div class="expenses__list">
@@ -263,45 +315,6 @@
 					</div>
 				</div>
 			</section>
-
-			<section class="summary_box">
-				<div class="summary_box_header">
-					<h2>Summary</h2>
-					<span class="material-symbols-outlined"> shopping_cart </span>
-				</div>
-				<h3>Total: 797 PLN</h3>
-				<section class="summary_box_period">
-					<h3>Per period</h3>
-					<div class="sum_period__item">
-						<div class="date">2022-07</div>
-						<div class="amount">40</div>
-						<div class="currency">PLN</div>
-					</div>
-					<div class="sum_period__item">
-						<div class="date">2022-08</div>
-						<div class="amount">349</div>
-						<div class="currency">PLN</div>
-					</div>
-					<div class="sum_period__item">
-						<div class="date">2022-09</div>
-						<div class="amount">408</div>
-						<div class="currency">PLN</div>
-					</div>
-				</section>
-				<section class="summary_box_category">
-					<h3>Per category</h3>
-					<div class="sum_category__item">
-						<div class="date">food</div>
-						<div class="amount">97</div>
-						<div class="currency">PLN</div>
-					</div>
-					<div class="sum_category__item">
-						<div class="date">car</div>
-						<div class="amount">700</div>
-						<div class="currency">PLN</div>
-					</div>
-				</section>
-			</section>
 			<div class="img-container">
 				<img
 					src="https://mikolaj-demo-bucket-2022.s3.eu-central-1.amazonaws.com/shoppingCart.png"
@@ -310,5 +323,50 @@
 				/>
 			</div>
 		</section>
+		<section class="summary-container">
+			<img src='img/notepad-guy-small.png' class='img-notepad' />
+
+		<section class="summary_box">
+			<div class="summary_box_header">
+				<h2>Summary</h2>
+				<span class="material-symbols-outlined"> shopping_cart </span>
+			</div>
+			<hr/>
+			<h3>Total: 797 PLN</h3>
+			<section class="summary_box_period">
+				<h3 >Per period</h3>
+				
+				<div class="sum_period__item">
+					<div class="date">2022-07</div>
+					<div class="amount">40</div>
+					<div class="currency">PLN</div>
+				</div>
+				<div class="sum_period__item">
+					<div class="date">2022-08</div>
+					<div class="amount">349</div>
+					<div class="currency">PLN</div>
+				</div>
+				<div class="sum_period__item">
+					<div class="date">2022-09</div>
+					<div class="amount">408</div>
+					<div class="currency">PLN</div>
+				</div>
+			</section>
+			<section class="summary_box_category">
+				<h3>Per category</h3>
+				<div class="sum_category__item">
+					<div class="date">food</div>
+					<div class="amount">97</div>
+					<div class="currency">PLN</div>
+				</div>
+				<div class="sum_category__item">
+					<div class="date">car</div>
+					<div class="amount">700</div>
+					<div class="currency">PLN</div>
+				</div>
+			</section>
+			
+		</section>
+	</section>
 	</body>
 </html>

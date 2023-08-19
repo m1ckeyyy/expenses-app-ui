@@ -25,6 +25,10 @@
 
 body {
   font-family: sans-serif;
+  background: linear-gradient(338deg, rgb(241, 241, 241) 15%, rgb(0, 147, 156) 42%, rgb(7, 32, 33) 72%);
+  background: linear-gradient(338deg, rgb(66, 59, 103) 15%, rgb(0, 147, 156) 42%, rgb(20, 45, 46) 72%);
+  min-height: 100vh;
+  background-repeat: no-repeat;
 }
 
 * {
@@ -34,7 +38,7 @@ body {
 }
 
 nav {
-  background-color: white;
+  background-color: transparent;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 10%;
@@ -60,7 +64,7 @@ ul {
 .nav__logo a {
   font-family: "Catamaran", sans-serif;
   font-weight: 700;
-  color: black;
+  color: white;
   text-decoration: none;
   font-weight: 800;
 }
@@ -85,35 +89,23 @@ ul {
   text-shadow: 0 0 15px var(--active-text-color);
 }
 
-.body {
-  background-color: white;
+.expenses-container {
   display: flex;
+  align-items: flex-end;
   margin-top: 5%;
-  justify-content: space-evenly;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  justify-content: space-between;
+  background-color: transparent;
+  padding: 20px 5%;
 }
 
 .expenses_box {
-  /*
-  &::after {
-  	position: absolute;
-  	content: "";
-  	background-color: #000000;
-  	width: 100%;
-  	height: 100%;
-  	min-height: 500px;
-  	left: -4%;
-  	top: -4%;
-  	border-radius: 30px;
-  	transform: translateZ(-1px);
-  }*/
+  border: 2px solid rgba(255, 255, 255, 0.4705882353);
+  padding: 10px;
   transform-style: preserve-3d;
   border-radius: 30px 30px 0px 30px;
   position: relative;
   width: 50%;
-  background-color: #ecfaff;
-  background: linear-gradient(338deg, rgb(241, 241, 241) 15%, rgb(0, 147, 156) 42%, rgb(7, 32, 33) 72%);
+  background-color: #009099;
   max-height: 500px;
   display: flex;
   flex-direction: column;
@@ -131,7 +123,7 @@ ul {
   font-weight: 700;
   font-size: 2rem;
 }
-.expenses_box .datepicker {
+.expenses_box .expense-box-filters {
   color: white;
   display: flex;
   flex-direction: column;
@@ -139,24 +131,59 @@ ul {
   padding: 10px 18px;
   padding-top: 0;
 }
-.expenses_box .datepicker input {
-  font-family: "Catamaran", sans-serif;
-}
-.expenses_box .datepicker .form-title {
-  font-size: 1.2em;
+.expenses_box .expense-box-filters .datepicker .form-title {
+  font-weight: 700;
+  font-size: 1.1rem;
   display: flex;
   align-items: center;
 }
-.expenses_box .datepicker .form-title .icon-tune {
+.expenses_box .expense-box-filters .datepicker .form-title .icon-tune {
   margin-left: 3px;
   font-size: 1.4rem;
 }
-.expenses_box .datepicker .search-bar {
+.expenses_box .expense-box-filters .choose-category {
   display: flex;
   align-items: center;
 }
+.expenses_box .expense-box-filters .choose-category .choose-category-header {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.expenses_box .expense-box-filters .choose-category .checkbox-wrap {
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}
+.expenses_box .expense-box-filters .choose-category .checkbox-wrap .mdc-checkbox__background {
+  border: 2px solid white !important;
+}
+.expenses_box .expense-box-filters input {
+  font-family: "Catamaran", sans-serif;
+}
+.expenses_box .expense-box-filters .price-range {
+  display: flex;
+  align-items: center;
+}
+.expenses_box .expense-box-filters .search-bar {
+  display: flex;
+  align-items: center;
+}
+.expenses_box .expense-box-filters .search-bar input {
+  margin-left: 10px;
+  padding: 2px 10px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  outline: none;
+  box-sizing: content-box;
+  border: 2px solid transparent;
+}
+.expenses_box .expense-box-filters .search-bar input:focus {
+  border: 2px solid gray !important;
+}
 .expenses_box .expenses__list {
   overflow-y: auto;
+  box-shadow: inset 1px 20px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 .expenses_box .expenses__list .expense__item {
   background-color: white;
@@ -205,27 +232,44 @@ ul {
   font-size: 1.1rem;
 }
 
-.summary_box {
+.summary-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 500px;
+}
+.summary-container .summary_box {
+  padding: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.4705882353);
   overflow-x: hidden;
-  border-radius: 10px;
-  width: 25%;
-  border: 2px solid black;
+  border-radius: 0px 30px 30px 30px;
+  width: 50%;
+  margin-left: 5%;
+  margin-right: 10%;
+  color: white;
+  background-color: #009099;
   max-height: 500px;
+  height: 500px;
   display: flex;
   flex-direction: column;
-  display: none;
 }
-.summary_box .summary_box_header {
+.summary-container .summary_box .summary_box_header {
   padding: 10px;
   display: flex;
   align-items: center;
   border-radius: 10px 10px 0 0;
 }
-.summary_box .summary_box_header h2 {
+.summary-container .summary_box .summary_box_header h2 {
   margin-right: 7px;
   font-family: "Catamaran", sans-serif;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 2rem;
+}
+
+.img-notepad {
+  transform: scaleX(-1);
+  width: 350px;
+  margin-left: 10%;
 }
 
 .sum_period__item {
@@ -236,6 +280,10 @@ ul {
   display: flex;
 }
 
+.img-container {
+  margin-left: auto;
+  margin-right: 10%;
+}
 .img-container .shopping-cart-image {
   transform: scaleX(-1);
   width: 450px;
