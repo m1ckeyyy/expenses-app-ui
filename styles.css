@@ -53,6 +53,12 @@ ul {
   list-style-type: none;
 }
 
+.app-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
 .nav__logo {
   margin-right: auto;
   font-size: 3rem;
@@ -60,7 +66,6 @@ ul {
   padding-right: 30px;
   width: 30%;
 }
-
 .nav__logo a {
   font-family: "Catamaran", sans-serif;
   font-weight: 700;
@@ -73,7 +78,6 @@ ul {
   padding-left: 20px;
   padding-right: 20px;
 }
-
 .nav__item a {
   font-size: 1.1rem;
   font-family: "Catamaran", sans-serif;
@@ -83,7 +87,6 @@ ul {
   white-space: nowrap;
   transition: text-shadow 0.1s ease;
 }
-
 .nav__item a:hover {
   color: var(--active-text-color);
   text-shadow: 0 0 15px var(--active-text-color);
@@ -93,9 +96,9 @@ ul {
   display: flex;
   align-items: flex-end;
   margin-top: 5%;
+  margin-left: 10%;
   justify-content: space-between;
   background-color: transparent;
-  padding: 20px 5%;
 }
 
 .expenses_box {
@@ -104,7 +107,7 @@ ul {
   transform-style: preserve-3d;
   border-radius: 30px 30px 0px 30px;
   position: relative;
-  width: 50%;
+  width: 100%;
   background-color: #009099;
   max-height: 500px;
   display: flex;
@@ -236,34 +239,91 @@ ul {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  height: 500px;
+}
+.summary-container *:not(.material-symbols-outlined) {
+  font-family: "Catamaran", sans-serif;
 }
 .summary-container .summary_box {
-  padding: 10px;
+  padding: 15px;
   border: 2px solid rgba(255, 255, 255, 0.4705882353);
   overflow-x: hidden;
   border-radius: 0px 30px 30px 30px;
-  width: 50%;
-  margin-left: 5%;
+  width: 100%;
   margin-right: 10%;
   color: white;
   background-color: #009099;
   max-height: 500px;
-  height: 500px;
   display: flex;
   flex-direction: column;
 }
+.summary-container .summary_box .total {
+  font-weight: 700;
+  font-size: 1.5em;
+}
 .summary-container .summary_box .summary_box_header {
-  padding: 10px;
+  padding: 6px 0;
   display: flex;
   align-items: center;
   border-radius: 10px 10px 0 0;
 }
 .summary-container .summary_box .summary_box_header h2 {
-  margin-right: 7px;
-  font-family: "Catamaran", sans-serif;
-  font-weight: 700;
   font-size: 2rem;
+  margin-right: 6px;
+}
+.summary-container .summary_box .summary_boxes_wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.summary-container .summary_box .summary_boxes_wrap .summary_box_category .sum_category__item {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.summary-container .summary_box .summary_boxes_wrap .summary_box_category .sum_category__item .date {
+  background-color: #8ee7ac;
+  color: black;
+  border-radius: 10px;
+  padding: 0 10px;
+  font-size: 1.1rem;
+  margin-right: 5px;
+}
+.summary-container .summary_box .summary_boxes_wrap .summary_box_category .sum_category__item .price {
+  display: flex;
+  background-color: #c4eaec;
+  color: black;
+  border-radius: 10px;
+  padding: 0 10px;
+  font-size: 1.1rem;
+}
+.summary-container .summary_box .summary_boxes_wrap .summary_box_category .sum_category__item .price .amount {
+  padding-right: 3px;
+}
+.summary-container .summary_box .summary_boxes_wrap .sum_period__item {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.summary-container .summary_box .summary_boxes_wrap .sum_period__item .date {
+  background-color: #bdae86;
+  color: black;
+  border-radius: 10px;
+  padding: 0 10px;
+  font-size: 1.1rem;
+  margin-right: 5px;
+}
+.summary-container .summary_box .summary_boxes_wrap .sum_period__item .price {
+  display: flex;
+  background-color: #c4eaec;
+  color: black;
+  border-radius: 10px;
+  padding: 0 10px;
+  font-size: 1.1rem;
+}
+.summary-container .summary_box .summary_boxes_wrap .sum_period__item .price .amount {
+  padding-right: 3px;
 }
 
 .img-notepad {
@@ -280,13 +340,22 @@ ul {
   display: flex;
 }
 
-.img-container {
-  margin-left: auto;
-  margin-right: 10%;
+.img-container-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.img-container .shopping-cart-image {
+.img-container-cart .shopping-cart-image {
   transform: scaleX(-1);
   width: 450px;
+}
+
+.img-container-notepad {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  /* width: 100px; */
+  align-items: center;
 }
 
 @media (max-width: 1060px) {
