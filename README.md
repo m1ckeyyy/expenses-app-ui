@@ -15,6 +15,7 @@ The goal of this project was to create a web page that displays expenses data in
 - HTML
 - SCSS with media queries
 - JavaScript
+- M2 Material Design
 
 ## Usage
 
